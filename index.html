@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Paper Title | Publication Page</title>
+  <style>
+    body {
+      font-family: "Helvetica", sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #0f172a;
+      color: white;
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .teaser img, .architecture img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .abstract {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .slider {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Your Paper Title</h1>
+    <p>Author1, Author2, Author3<br>Conference/Journal Name, Year</p>
+  </header>
+
+  <section class="teaser">
+    <h2>Teaser</h2>
+    <img src="teaser.jpg" alt="Teaser Image">
+  </section>
+
+  <section class="architecture">
+    <h2>Architecture</h2>
+    <img src="architecture.png" alt="Architecture Figure">
+  </section>
+
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>
+      Replace this with your abstract text. This section gives a concise summary
+      of your paper’s motivation, methodology, and key results. Try to keep it
+      around 150–200 words.
+    </p>
+  </section>
+
+  <section class="results">
+    <h2>Results</h2>
+    <div class="slider">
+      <img class="slides" src="result1.jpg" alt="Result 1">
+      <img class="slides" src="result2.jpg" alt="Result 2">
+      <img class="slides" src="result3.jpg" alt="Result 3">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Your Name | Contact: your.email@example.com
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+</body>
+</html>
